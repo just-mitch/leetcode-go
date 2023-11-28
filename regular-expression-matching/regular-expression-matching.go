@@ -1,4 +1,4 @@
-package main
+package regularexpressionmatching
 
 func isMatch(s string, p string) bool {
 	const unknown = byte(0)
