@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func TestInOrderIterator(t *testing.T) {
+func TestPreOrderIterator(t *testing.T) {
 
 	type args struct {
 		l *BinaryTree[int]
@@ -26,13 +26,13 @@ func TestInOrderIterator(t *testing.T) {
 					&Node[int]{3, nil, nil},
 					&Node[int]{5, nil, nil}}}},
 		},
-			[]int{0, 1, 2, 3, 4, 5}},
+			[]int{2, 0, 1, 4, 3, 5}},
 	}
 
 	for i, tt := range tests {
-		t.Run(fmt.Sprintf("ToSlice-%v", i), func(t *testing.T) {
-			if got := tt.args.l.ToSlice(); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("%T, ToSlice() = %v, want %v", tt.args.l, got, tt.want)
+		t.Run(fmt.Sprintf("to-preorder-slice-%v", i), func(t *testing.T) {
+			if got := tt.args.l.ToPreOrderSlice(); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("%T, ToPreOrderSlice() = %v, want %v", tt.args.l, got, tt.want)
 			}
 		})
 	}
