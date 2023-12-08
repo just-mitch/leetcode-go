@@ -4,9 +4,6 @@ import (
 	"fmt"
 )
 
-// just a scratchpad for testing stuff
 func main() {
-
-	fmt.Println("Hello, playground")
-
+	fmt.Println("Hello, World!")
 }
